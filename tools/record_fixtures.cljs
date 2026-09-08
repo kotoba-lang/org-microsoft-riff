@@ -10,7 +10,7 @@
    Each file is confirmed readable by ffprobe before being written."
   (:require ["node:child_process" :as cp]
             ["node:fs" :as fs]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (def ^:private cases
   ;; [name codec channels] — 0.05 s at 8 kHz keeps every file under 4 KB while
