@@ -6,15 +6,15 @@ RIFF/WAVE, both directions, portable `.cljc`, zero dependencies.
 
 - **No host codec and no host float conversion in `src/`.** No `DataView`, no
   `ByteBuffer`, no `Math.fround`. ffmpeg/ffprobe appear in
-  `test/riff/riff_oracle_test.clj` and `tools/record_fixtures.cljs` only.
+  `test/riff/riff_oracle_test.cljk` and `tools/record_fixtures.cljk` only.
 - **Samples keep the file's own domain**: signed integers for PCM (8-bit
   de-biased), doubles for float. Do not normalise to [-1,1] — it destroys
   bit-exactness, which is the whole point of a lossless path.
 - **Compressed WAVE codecs are refused by name**, never returned as samples.
   The chunk walk still works on them.
-- **`test/riff/fixtures.cljc` is generated** — `nbb tools/record_fixtures.cljs`.
+- **`test/riff/fixtures.cljk` is generated** — `nbb tools/record_fixtures.cljk`.
 - **Every failure is an `ex-info` with a `:reason`.**
-- **Both runtimes are gated** (`clojure -M:test`, `nbb run-tests.cljs`).
+- **Both runtimes are gated** (`clojure -M:test`, `nbb run-tests.cljk`).
 
 ## Traps
 
@@ -44,7 +44,7 @@ RIFF/WAVE, both directions, portable `.cljc`, zero dependencies.
 |---|---|
 | `riff.core` | chunk walk, `parse`, `samples`, `build`, format tags and the GUID |
 | `riff.bytes` | little-endian integers and portable IEEE-754 |
-| `tools/record_fixtures.cljs` | regenerates the recorded WAV files |
+| `tools/record_fixtures.cljk` | regenerates the recorded WAV files |
 
 ## Next consumer
 

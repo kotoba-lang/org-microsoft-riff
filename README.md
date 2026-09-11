@@ -71,7 +71,7 @@ float32 (and lands on the nearest one when it is not).
 
 ```sh
 clojure -M:test      # JVM: portable suite + ffmpeg in both directions
-nbb run-tests.cljs   # ClojureScript: the portable suite, recorded files
+nbb run-tests.cljk   # ClojureScript: the portable suite, recorded files
 clojure -M:lint
 ```
 
@@ -83,7 +83,7 @@ survives our own reader and fails everywhere else.
 Regenerate the recorded files with:
 
 ```sh
-nbb tools/record_fixtures.cljs
+nbb tools/record_fixtures.cljk
 ```
 
 ## Not implemented
