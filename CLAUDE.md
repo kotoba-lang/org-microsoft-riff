@@ -12,9 +12,9 @@ RIFF/WAVE, both directions, portable `.cljc`, zero dependencies.
   bit-exactness, which is the whole point of a lossless path.
 - **Compressed WAVE codecs are refused by name**, never returned as samples.
   The chunk walk still works on them.
-- **`test/riff/fixtures.cljk` is generated** — `nbb tools/record_fixtures.cljk`.
+- **`test/riff/fixtures.cljk` is generated** — `kbb --backend sci tools/record_fixtures.cljk`.
 - **Every failure is an `ex-info` with a `:reason`.**
-- **Both runtimes are gated** (`clojure -M:test`, `nbb run-tests.cljk`).
+- **Both runtimes are gated** (`kbb -M:test`, `kbb --backend sci run-tests.cljk`).
 
 ## Traps
 

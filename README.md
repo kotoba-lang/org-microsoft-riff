@@ -70,9 +70,9 @@ float32 (and lands on the nearest one when it is not).
 ## Test
 
 ```sh
-clojure -M:test      # JVM: portable suite + ffmpeg in both directions
-nbb run-tests.cljk   # ClojureScript: the portable suite, recorded files
-clojure -M:lint
+kbb -M:test      # JVM: portable suite + ffmpeg in both directions
+kbb --backend sci run-tests.cljk   # ClojureScript: the portable suite, recorded files
+kbb -M:lint
 ```
 
 The oracle's strongest assertion is not "ffprobe accepts our file" but **ffmpeg's
@@ -83,7 +83,7 @@ survives our own reader and fails everywhere else.
 Regenerate the recorded files with:
 
 ```sh
-nbb tools/record_fixtures.cljk
+kbb --backend sci tools/record_fixtures.cljk
 ```
 
 ## Not implemented
