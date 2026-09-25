@@ -1,7 +1,7 @@
 (ns riff.riff-test
   "Runtime-agnostic RIFF/WAVE suite: recorded reference files, no shell, no
    filesystem. The oracle suite adds ffmpeg in both directions."
-  (:require [riff.bytes :as b]
+  (:require [kotoba.bytes :as kbytes] [riff.bytes :as b]
             [riff.core :as riff]
             [riff.fixtures :as fixtures]
             #?(:clj  [kotoba.test :refer [deftest is testing]]
@@ -9,7 +9,7 @@
 
 (defn- b64->bytes [s]
   #?(:clj (mapv #(bit-and (int %) 0xff)
-                (.decode (java.util.Base64/getDecoder) ^String s))
+                (kbytes/base64-decode-bytes ^String s))
      :cljs (let [d (js/atob s)]
              (mapv #(.charCodeAt d %) (range (.-length d))))))
 
