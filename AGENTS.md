@@ -1,4 +1,4 @@
-# CLAUDE.md — org-microsoft-riff
+# AGENTS.md — org-microsoft-riff
 
 RIFF/WAVE, both directions, portable `.cljc`, zero dependencies.
 
